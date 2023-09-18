@@ -2,7 +2,7 @@
 ***********
 스프링을 이용하여 간단하게 글쓰는 게시판 만들기
 
-Spring + Maven + MySql + Java
+Spring + Maven + MySql + Java + Tomcat
 ************
 ## 기능
 1. 회원가입 기능
@@ -16,3 +16,4 @@ Spring + Maven + MySql + Java
 2. JDK = 1.8
 3. MAVEN = 3.9.3
 4. MySql = 8.0.34
+5. Tomcat = 8.5
