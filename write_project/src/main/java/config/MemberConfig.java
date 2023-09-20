@@ -7,6 +7,8 @@ import org.springframework.jdbc.datasource.DataSourceTransactionManager;
 import org.springframework.transaction.PlatformTransactionManager;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
+import member.*;
+
 @Configuration
 @EnableTransactionManagement
 public class MemberConfig {
@@ -33,4 +35,13 @@ public class MemberConfig {
 		return tm;
 	}
 	
+	@Bean
+	public MemberDao memberDao() {
+		return new MemberDao(dataSource());
+	}
+	
+	@Bean
+	public MemberRegisterService memberRegSvc() {
+		return new MemberRegisterService(memberDao());
+	}
 }
