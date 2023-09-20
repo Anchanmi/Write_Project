@@ -1,19 +1,15 @@
 package member;
 
 import javax.validation.constraints.Size;
-import org.hibernate.validator.constraints.NotBlank;
 
 public class RegisterRequest {
 
-	@NotBlank
 	@Size(min = 2)
 	private String nickname;
 	
-	@NotBlank
 	@Size(min = 6)
 	private String id;
 	
-	@NotBlank
 	@Size(min = 6)
 	private String password;
 	private String confirmPassword;
