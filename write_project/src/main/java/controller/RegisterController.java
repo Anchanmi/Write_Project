@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ui.Model;
 import org.springframework.validation.Errors;
+import javax.validation.Valid;
 
 import member.*;
 
@@ -28,7 +29,7 @@ public class RegisterController {
 	}
 	
 	@GetMapping("/registerComplete")
-	public String handleComplete(RegisterRequest regReq, Errors errors) {
+	public String handleComplete(@Valid RegisterRequest regReq, Errors errors) {
 		new RegisterRequestValidator().validate(regReq, errors);
 		if(errors.hasErrors()) {
 			return "register/registerPage";
