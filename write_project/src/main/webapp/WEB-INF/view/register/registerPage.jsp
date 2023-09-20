@@ -25,7 +25,7 @@
 		</p>
 		<p>
 			<label><strong>비밀번호 확인</strong><br>
-				<form:password path="confrimPassword" />
+				<form:password path="confirmPassword" />
 			</label>
 		</p>
 		<p>
