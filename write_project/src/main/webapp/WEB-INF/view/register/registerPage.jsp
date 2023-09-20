@@ -8,32 +8,32 @@
 	<h2>회원 정보 입력</h2>
 	<form action="registerComplete">
 		<p>
-			<label><h4>닉네임</h4><br>
+			<label><strong>닉네임</strong><br>
 				<input type="text" name="nickname" id="nickname">
 			</label>
 		</p>
 		<p>
-			<label><h4>아이디</h4><br>
+			<label><strong>아이디</strong><br>
 				<input type="text" name="id" id="id">
 			</label>
 		</p>
 		<p>
-			<label><h4>비밀번호</h4><br>
+			<label><strong>비밀번호</strong><br>
 				<input type="password" name="password" id="password">
 			</label>
 		</p>
 		<p>
-			<label><h4>비밀번호 확인</h4><br>
+			<label><strong>비밀번호 확인</strong><br>
 				<input type="password" name="confirmPassword" id="confirmPassword">
 			</label>
 		</p>
 		<p>
-			<label><h4>이름</h4><br>
+			<label><strong>이름</strong><br>
 				<input type="text" name="name" id="name">
 			</label>
 		</p>
 		<p>
-			<label><h4>이메일</h4><br>
+			<label><strong>이메일</strong><br>
 				<input type="text" name="email" id="email">
 			</label>
 		</p>
