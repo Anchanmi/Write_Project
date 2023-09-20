@@ -5,6 +5,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 //import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.ui.Model;
 
 import member.*;
 
@@ -20,7 +21,8 @@ public class RegisterController {
 	}
 
 	@GetMapping("/registerPage")
-	public String handleRegister() {
+	public String handleRegister(Model model) {
+		model.addAttribute("registerRequest", new RegisterRequest());
 		return"register/registerPage";
 	}
 	
