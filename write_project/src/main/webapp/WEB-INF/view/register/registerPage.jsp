@@ -7,7 +7,7 @@
 </head>
 <body>
 	<h2>회원 정보 입력</h2>
-	<form action="registerComplete" modelAttribute="registerRequest">
+	<form:form action="registerComplete" modelAttribute="registerRequest">
 		<p>
 			<label><strong>닉네임</strong><br>
 				<form:input path="nickname" />
@@ -39,5 +39,6 @@
 			</label>
 		</p>
 		<input type="submit" value="가입">
+	</form:form>
 </body>
 </html>
