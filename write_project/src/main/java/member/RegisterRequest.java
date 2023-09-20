@@ -56,5 +56,9 @@ public class RegisterRequest {
 	public String getEmail() {
 		return email;
 	}
+	
+	public boolean isPasswordEqualToConfirmPassword() {
+		return password.equals(confirmPassword);
+	}
 }
 
