@@ -17,7 +17,7 @@ public class MemberConfig {
 	public DataSource dataSource() {
 		DataSource ds = new DataSource();
 		ds.setDriverClassName("com.mysql.jdbc.Driver");
-		ds.setUrl("jdbc:mysql://localhost/wirte_DB?characterEncoding=utf8");
+		ds.setUrl("jdbc:mysql://localhost/wirte_db?characterEncoding=utf8");
 		ds.setUsername("write");
 		ds.setPassword("write1234");
 		ds.setInitialSize(2);
