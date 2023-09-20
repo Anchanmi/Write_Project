@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ui.Model;
+import org.springframework.validation.Errors;
 
 import member.*;
 
@@ -23,15 +24,20 @@ public class RegisterController {
 	@GetMapping("/registerPage")
 	public String handleRegister(Model model) {
 		model.addAttribute("registerRequest", new RegisterRequest());
-		return"register/registerPage";
+		return "register/registerPage";
 	}
 	
 	@GetMapping("/registerComplete")
-	public String handleComplete(RegisterRequest regReq) {
+	public String handleComplete(RegisterRequest regReq, Errors errors) {
+		new RegisterRequestValidator().validate(regReq, errors);
+		if(errors.hasErrors()) {
+			return "register/registerPage";
+		}
 		try {
 			memberRegisterService.regist(regReq);
 			return "register/registerComplete";
 		} catch(DuplicateMemberException ex) {
+			errors.rejectValue("nickname", "duplicate");
 			return "register/registerPage";
 		}
 		
