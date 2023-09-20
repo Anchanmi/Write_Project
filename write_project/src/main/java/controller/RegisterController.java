@@ -2,7 +2,7 @@ package controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.PostMapping;
+//import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -24,7 +24,7 @@ public class RegisterController {
 		return"register/registerPage";
 	}
 	
-	@PostMapping("/registerComplete")
+	@GetMapping("/registerComplete")
 	public String handleComplete(RegisterRequest regReq) {
 		try {
 			memberRegisterService.regist(regReq);
