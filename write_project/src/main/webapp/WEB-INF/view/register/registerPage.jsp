@@ -1,4 +1,5 @@
 <%@ page contentType = "text/html; charset=utf-8" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -6,35 +7,35 @@
 </head>
 <body>
 	<h2>회원 정보 입력</h2>
-	<form action="registerComplete">
+	<form action="registerComplete" modelAttribute="registerRequest">
 		<p>
 			<label><strong>닉네임</strong><br>
-				<input type="text" name="nickname" id="nickname">
+				<form:input path="nickname" />
 			</label>
 		</p>
 		<p>
 			<label><strong>아이디</strong><br>
-				<input type="text" name="id" id="id">
+				<form:input path="id" />
 			</label>
 		</p>
 		<p>
 			<label><strong>비밀번호</strong><br>
-				<input type="password" name="password" id="password">
+				<form:password path="password" />
 			</label>
 		</p>
 		<p>
 			<label><strong>비밀번호 확인</strong><br>
-				<input type="password" name="confirmPassword" id="confirmPassword">
+				<form:password path="confrimPassword" />
 			</label>
 		</p>
 		<p>
 			<label><strong>이름</strong><br>
-				<input type="text" name="name" id="name">
+				<form:input path="name" />
 			</label>
 		</p>
 		<p>
 			<label><strong>이메일</strong><br>
-				<input type="text" name="email" id="email">
+				<form:input path="email" />
 			</label>
 		</p>
 		<input type="submit" value="가입">
