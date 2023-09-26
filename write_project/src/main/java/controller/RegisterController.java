@@ -2,7 +2,7 @@ package controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
-//import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ui.Model;
@@ -22,13 +22,13 @@ public class RegisterController {
 		this.memberRegisterService = memberRegisterService;
 	}
 
-	@GetMapping("/registerPage")
+	@PostMapping("/registerPage")
 	public String handleRegister(Model model) {
 		model.addAttribute("registerRequest", new RegisterRequest());
 		return "register/registerPage";
 	}
 	
-	@GetMapping("/registerComplete")
+	@PostMapping("/registerComplete")
 	public String handleComplete(@Valid RegisterRequest regReq, Errors errors) {
 		new RegisterRequestValidator().validate(regReq, errors);
 		if(errors.hasErrors()) {
