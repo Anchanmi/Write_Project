@@ -8,8 +8,9 @@
 <body>
 	<p>글쓰는 페이지</p>
 	<p>
+		<c:url value="/register/registerPage" var="register" />
 		<button>로그인</button>
-		<button onclick="location.href=<c:url value='/register/registerPage'/>">회원가입</button>
+		<button onclick="location.href='${register}'">회원가입</button>
 	</p>
 </body>
 </html>
