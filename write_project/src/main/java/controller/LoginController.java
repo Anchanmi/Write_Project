@@ -5,6 +5,7 @@ import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import member.*;
 
@@ -12,6 +13,7 @@ import member.*;
 @RequestMapping("/login")
 public class LoginController {
 
+	@Autowired
 	private AuthService authService;
 	
 	public void setAuthService(AuthService authService) {
