@@ -9,5 +9,10 @@
 	<p><strong>${registerRequest.nickname}님</strong>
 		회원가입을 완료했습니다.
 	</p>
+	<p>
+		<c:url value="/main" var="main" />
+		<button>로그인</button>
+		<button onclick="location.href='${main}'">메인</button>
+	</p>
 </body>
 </html>
