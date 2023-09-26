@@ -11,7 +11,7 @@
 	</p>
 	<p>
 		<c:url value="/main" var="main" />
-		<c:url value="/login/loginForm" var="login" />
+		<c:url value="/login" var="login" />
 		<button onclick="location.href='${login}'">로그인</button>
 		<button onclick="location.href='${main}'">메인</button>
 	</p>
