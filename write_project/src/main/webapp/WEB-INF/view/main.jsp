@@ -9,7 +9,7 @@
 	<p>글쓰는 페이지</p>
 	<p>
 		<button>로그인</button>
-		<button onclick="location.href="<c:url value="/register/registerPage"/>"">회원가입</button>
+		<button onclick="<c:url value='/register/registerPage'/>">회원가입</button>
 	</p>
 </body>
 </html>
