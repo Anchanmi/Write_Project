@@ -17,7 +17,7 @@
 		</p>
 		<p>
 			<label><strong>비밀번호 : 
-				<form:input path="password" />
+				<form:password path="password" />
 				<form:errors path="password" />
 		</p>
 		<input type="submit" value="로그인">
