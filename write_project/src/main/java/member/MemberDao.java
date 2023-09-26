@@ -36,6 +36,24 @@ public class MemberDao {
 		return results.isEmpty() ? null : results.get(0);
 	}
 	
+	public Member selectById(String id) {
+		List<Member> results = jdbcTemplate.query(
+				"select * from member where id = ?", new RowMapper<Member>() {
+					@Override
+					public Member mapRow(ResultSet rs, int rowNum) throws SQLException{
+						Member member = new Member(
+								rs.getString("nickname"),
+								rs.getString("id"),
+								rs.getString("password"),
+								rs.getString("name"),
+								rs.getString("email"),
+								rs.getTimestamp("register_day").toLocalDateTime());
+						return member;
+					}
+				}, id);
+		return results.isEmpty() ? null : results.get(0);
+	}
+	
 	public void insert(Member member) {
 		jdbcTemplate.update(
 				"insert into member values(?, ?, ?, ?, ?, ?)",
