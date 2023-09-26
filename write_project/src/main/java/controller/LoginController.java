@@ -36,10 +36,10 @@ public class LoginController {
 			return "login/loginSuccess";
 		}catch(WrongIdPasswordException e) {
 			errors.reject("passwordNotMatching");
-			return "login/loginFrom";
+			return "login/loginForm";
 		}catch(NotMemberException e) {
 			errors.reject("NoMember");
-			return "login/loginFrom";
+			return "login/loginForm";
 		}
 	}
 }
