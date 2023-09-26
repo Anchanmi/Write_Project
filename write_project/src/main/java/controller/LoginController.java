@@ -33,7 +33,7 @@ public class LoginController {
 			AuthInfo authInfo = authService.authenticate(loginCommand.getId(), loginCommand.getPassword());
 			return "login/loginSuccess";
 		}catch(WrongIdPasswordException e) {
-			errors.reject("idPasswordNotMatching");
+			errors.reject("passwordNotMatching");
 			return "login/loginFrom";
 		}catch(NotMemberException e) {
 			errors.reject("NoMember");
