@@ -43,4 +43,8 @@ public class Member {
 	public LocalDateTime getRegister_day() {
 		return register_day;
 	}
+	
+	public boolean matchPassword(String password) {
+		return this.password.equals(password);
+	}
 }
