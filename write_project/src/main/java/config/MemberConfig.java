@@ -44,4 +44,9 @@ public class MemberConfig {
 	public MemberRegisterService memberRegSvc() {
 		return new MemberRegisterService(memberDao());
 	}
+	
+	@Bean
+	public AuthService authService() {
+		return new AuthService();
+	}
 }
