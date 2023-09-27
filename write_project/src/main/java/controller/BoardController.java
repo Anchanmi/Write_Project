@@ -35,7 +35,7 @@ public class BoardController {
 		AuthInfo authInfo = (AuthInfo) session.getAttribute("authInfo");
 		
 		if(authInfo == null) {
-			return "redirect:/login/loginForm";
+			return "redirect:/login";
 		}
 		
 		br.setNickname(authInfo.getNickname());
