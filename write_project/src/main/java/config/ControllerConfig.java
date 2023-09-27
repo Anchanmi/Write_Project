@@ -3,9 +3,7 @@ package config;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
-import controller.RegisterController;
-import controller.LoginController;
-import controller.LogoutController;
+import controller.*;
 
 @Configuration
 public class ControllerConfig {
@@ -23,5 +21,10 @@ public class ControllerConfig {
 	@Bean
 	public LogoutController logoutController() {
 	return new LogoutController();
+	}
+	
+	@Bean
+	public BoardController boardController() {
+		return new BoardController();
 	}
 }
