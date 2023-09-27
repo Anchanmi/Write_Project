@@ -7,7 +7,7 @@ import javax.servlet.http.HttpSession;
 public class BoardService {
 	
 	private BoardDao boardDao;
-	private HttpSession session;
+	public HttpSession session;
 	
 	public BoardService(BoardDao boardDao) {
 		this.boardDao = boardDao;
