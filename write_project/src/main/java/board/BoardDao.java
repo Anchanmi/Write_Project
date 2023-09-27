@@ -35,9 +35,11 @@ public class BoardDao {
 		return results.isEmpty() ? null : results.get(0);
 	}
 	
+	
+	
 	public void insert(Board board) {
 		jdbcTemplate.update("insert into board(subject, content, nickname, views, write_time) " + 
-							"values (?, ?, ?, ?, ?)", board.getSubject(), board.getContent(),
+							"values (?, ?, ?, ?, ?)", board.getSubject(), board.getContent(), board.getNickname(),
 							board.getViews(), Timestamp.valueOf(board.getWrite_time()));
 	}
 }
