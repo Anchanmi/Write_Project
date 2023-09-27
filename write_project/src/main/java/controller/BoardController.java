@@ -24,13 +24,13 @@ public class BoardController {
 	}
 	
 	@GetMapping("/boardForm")
-	public String handleBoardRegister(Model model, HttpSession session) {
+	public String handleBoardRegister(Model model) {
 		model.addAttribute("boardRequest", new BoardRequest());
 		return "board/boardForm";
 	}
 	
 	@PostMapping("/boardSuccess")
-	public String hadleBoardSuccess(BoardRequest br, Errors errors) {
+	public String hadleBoardSuccess(BoardRequest br, Errors errors, HttpSession session) {
 		new BoardRequestValidator().validate(br, errors);
 		if(errors.hasErrors()) {
 			return "board/boardForm";
