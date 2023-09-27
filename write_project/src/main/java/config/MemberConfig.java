@@ -55,4 +55,9 @@ public class MemberConfig {
 	public AuthService authService() {
 		return new AuthService();
 	}
+	
+	@Bean
+	public BoardService boardService() {
+		return new BoardService(boardDao());
+	}
 }
