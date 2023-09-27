@@ -13,7 +13,7 @@ public class BoardService {
 		this.boardDao = boardDao;
 	}
 	
-	public void register(BoardRequest br) {
+	public void regist(BoardRequest br) {
 		AuthInfo authInfo = (AuthInfo) session.getAttribute("authInfo");
 		
 		if(authInfo == null) {
