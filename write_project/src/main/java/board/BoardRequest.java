@@ -4,6 +4,7 @@ public class BoardRequest { //커맨드 객체
 
 	private String subject;
 	private String content;
+	private String nickname;
 	
 	public void setSubject(String subject) {
 		this.subject = subject;
@@ -19,5 +20,13 @@ public class BoardRequest { //커맨드 객체
 	
 	public String getContent() {
 		return content;
+	}
+	
+	public void setNickname(String nickname) {
+		this.nickname = nickname;
+	}
+	
+	public String getNickname() {
+		return nickname;
 	}
 }
