@@ -7,8 +7,10 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ui.Model;
 import org.springframework.validation.Errors;
+import javax.servlet.http.HttpSession;
 
 import board.*;
+import member.AuthInfo;
 
 @Controller
 @RequestMapping("/board")
@@ -22,7 +24,7 @@ public class BoardController {
 	}
 	
 	@GetMapping("/boardForm")
-	public String handleBoardRegister(Model model) {
+	public String handleBoardRegister(Model model, HttpSession session) {
 		model.addAttribute("boardRequest", new BoardRequest());
 		return "board/boardForm";
 	}
