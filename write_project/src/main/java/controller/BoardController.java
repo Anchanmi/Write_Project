@@ -48,7 +48,7 @@ public class BoardController {
 			return "board/boardSuccess";
 		} catch(NoAuthInfoException en) {
 			errors.reject("NoAuthInfo");
-			return "redirect:/login/loginForm";
+			return "redirect:/main";
 		}
 	}
 }
