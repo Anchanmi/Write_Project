@@ -34,6 +34,10 @@ public class BoardController {
 		new BoardRequestValidator().validate(br, errors);
 		AuthInfo authInfo = (AuthInfo) session.getAttribute("authInfo");
 		
+		if(authInfo == null) {
+			return "redirect:/login/loginForm";
+		}
+		
 		br.setNickname(authInfo.getNickname());
 		
 		if(errors.hasErrors()) {
