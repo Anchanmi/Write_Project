@@ -8,6 +8,7 @@ import org.springframework.transaction.PlatformTransactionManager;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 import member.*;
+import board.*;
 
 @Configuration
 @EnableTransactionManagement
@@ -38,6 +39,11 @@ public class MemberConfig {
 	@Bean
 	public MemberDao memberDao() {
 		return new MemberDao(dataSource());
+	}
+	
+	@Bean
+	public BoardDao boardDao() {
+		return new BoardDao(dataSource());
 	}
 	
 	@Bean
