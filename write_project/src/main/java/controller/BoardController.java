@@ -43,12 +43,9 @@ public class BoardController {
 		if(errors.hasErrors()) {
 			return "board/boardForm";
 		}
-		try {
-			boardService.regist(br);
-			return "board/boardSuccess";
-		} catch(NoAuthInfoException en) {
-			errors.reject("NoAuthInfo");
-			return "redirect:/login/loginForm";
-		}
+		
+		boardService.regist(br);
+		return "board/boardSuccess";
+		
 	}
 }
