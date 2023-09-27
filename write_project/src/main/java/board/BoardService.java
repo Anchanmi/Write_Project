@@ -19,6 +19,7 @@ public class BoardService {
 		if(authInfo == null) {
 			throw new NoAuthInfoException();
 		}
+		System.out.println(authInfo.getNickname());
 		
 		Board newBoard = new Board(br.getSubject(), br.getContent(), authInfo.getNickname(),
 									0, LocalDateTime.now());
