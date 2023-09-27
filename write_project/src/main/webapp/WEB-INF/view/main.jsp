@@ -23,7 +23,8 @@
 			<button onclick="location.href='${logout}'">로그아웃</button>
 		</p>
 		<p>
-			<button>글쓰기</button>
+			<c:url value="/board/boardForm" var="board" />
+			<button onclick="location.href='${board}'">글쓰기</button>
 		</p>
 	</c:if>
 </body>
