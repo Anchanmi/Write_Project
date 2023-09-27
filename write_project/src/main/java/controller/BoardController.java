@@ -10,7 +10,7 @@ import org.springframework.validation.Errors;
 import javax.servlet.http.HttpSession;
 
 import board.*;
-import member.AuthInfo;
+import member.*;
 
 @Controller
 @RequestMapping("/board")
@@ -32,6 +32,14 @@ public class BoardController {
 	@PostMapping("/boardSuccess")
 	public String hadleBoardSuccess(BoardRequest br, Errors errors, HttpSession session) {
 		new BoardRequestValidator().validate(br, errors);
+		AuthInfo authInfo = (AuthInfo) session.getAttribute("authInfo");
+		
+		if(authInfo == null) {
+			throw new NoAuthInfoException();
+		}
+		
+		br.setNickname(authInfo.getNickname());
+		
 		if(errors.hasErrors()) {
 			return "board/boardForm";
 		}
