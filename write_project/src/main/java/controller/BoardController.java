@@ -34,10 +34,6 @@ public class BoardController {
 		new BoardRequestValidator().validate(br, errors);
 		AuthInfo authInfo = (AuthInfo) session.getAttribute("authInfo");
 		
-		if(authInfo == null) {
-			throw new NoAuthInfoException();
-		}
-		
 		br.setNickname(authInfo.getNickname());
 		
 		if(errors.hasErrors()) {
@@ -48,7 +44,7 @@ public class BoardController {
 			return "board/boardSuccess";
 		} catch(NoAuthInfoException en) {
 			errors.reject("NoAuthInfo");
-			return "redirect:/main";
+			return "redirect:/login/loginForm";
 		}
 	}
 }
