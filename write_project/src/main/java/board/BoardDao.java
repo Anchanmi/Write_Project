@@ -18,7 +18,7 @@ public class BoardDao {
 		this.jdbcTemplate = new JdbcTemplate(dataSource);
 	}
 	
-	public List<Board> selectById(int id) {
+	public Board selectById(int id) {
 		List<Board> results = jdbcTemplate.query(
 				"select * from board where id = ?", new RowMapper<Board>() {
 					@Override
@@ -32,7 +32,7 @@ public class BoardDao {
 						return board;
 					}
 				}, id);
-		return results;
+		return results.isEmpty() ? null : results.get(0);
 	}
 	
 	public List<BoardList> selectAll(){
