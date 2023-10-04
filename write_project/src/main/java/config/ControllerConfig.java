@@ -7,6 +7,11 @@ import controller.*;
 
 @Configuration
 public class ControllerConfig {
+	
+	@Bean
+	public MainController mainController() {
+		return new MainController();
+	}
 
 	@Bean
 	public RegisterController registerController() {
