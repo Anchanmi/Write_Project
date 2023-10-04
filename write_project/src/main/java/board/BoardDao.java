@@ -59,6 +59,6 @@ public class BoardDao {
 	}
 	
 	public void update(Board board) {
-		jdbcTemplate.update("update set views = ? where = ?", board.getViews(), board.getId());
+		jdbcTemplate.update("update set views = ? where = ?", board.getViews(), board.getId()); //id는 게시판 번호
 	}
 }
