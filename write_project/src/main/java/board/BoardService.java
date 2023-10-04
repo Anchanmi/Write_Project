@@ -19,9 +19,14 @@ public class BoardService {
 		
 	}
 	
-	public List<BoardList> list(){
+	public List<BoardList> list(){ //글 목록 보여주는 메소드
 		List<BoardList> liB = boardDao.selectAll();
 		return liB;
 		
+	}
+	
+	public List<Board> content(Board board){ //글 내용 보여주는 메소드
+		List<Board> list = boardDao.selectById(board.getId());
+		return list;
 	}
 }
