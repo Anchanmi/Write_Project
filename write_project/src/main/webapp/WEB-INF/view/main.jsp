@@ -39,7 +39,7 @@
 			<c:forEach var="list" items="${boardList}">
 				<tr>
 					<td>${list.id}</td>
-					<td><a href="<c:url value='/main/${boardList.id}'/>"></a>${list.subject}</td>
+					<td><a href="<c:url value='/main/${list.id}'/>"></a>${list.subject}</td>
 					<td>${list.nickname}</td>
 					<td>${list.views}</td>
 					<td>${list.write_time}</td>
