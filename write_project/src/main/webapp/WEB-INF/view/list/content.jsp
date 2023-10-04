@@ -1,5 +1,6 @@
 <%@ page contentType="text/html; charset=utf-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="tf" tagdir="/WEB-INF/tags" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -14,7 +15,8 @@
 		<strong>내용</strong>	${board.content}
 	</p>
 	<p>
-		<strong>작성 날짜</strong> | ${board.write_time} |
+		<strong>작성 날짜</strong> | 
+		<tf:formatDateTime value="${board.write_time}" pattern="yyyy-MM-dd HH:mm" /> |
 		<strong>조회수</strong> | ${board.views + 1} |
 	</p>
 	<c:url value="/main" var="main" />
