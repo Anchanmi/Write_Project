@@ -32,7 +32,7 @@ public class MainController {
 	public String content(@PathVariable("id") int id, Model model) {
 		Board board = boardService.content(id);
 		int hit = board.getViews() + 1;
-		boardService.update(hit, board.getId()); //글을 읽을 때 마다 조회수가 올라감.
+		boardService.update(hit, id); //글을 읽을 때 마다 조회수가 올라감.
 		model.addAttribute("board", board);
 		return "list/content";
 	}
