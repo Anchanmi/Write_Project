@@ -27,5 +27,26 @@
 			<button onclick="location.href='${board}'">글쓰기</button>
 		</p>
 	</c:if>
+
+	<table border="1">
+		<th>번호</th>
+		<th>제목</th>
+		<th>작성자</th>
+		<th>조회수</th>
+		<th>작성 날짜</th>
+		
+		<c:if test="${!empty boardList}">
+			<c:forEach var="list" items="${boardList}">
+				<tr>
+					<td>${boardList.id}</td>
+					<td>${boardList.subject}</td>
+					<td>${boardList.nickname}</td>
+					<td>${boardList.views}</td>
+					<td>${boardList.write_time}</td>
+				</tr>
+			</c:forEach>
+		</c:if>
+	</table>
+
 </body>
 </html>
