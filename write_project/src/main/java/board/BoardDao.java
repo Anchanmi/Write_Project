@@ -58,7 +58,7 @@ public class BoardDao {
 							board.getViews(), Timestamp.valueOf(board.getWrite_time()));
 	}
 	
-	public void update(Board board) {
-		jdbcTemplate.update("update set views = ? where = ?", board.getViews(), board.getId()); //id는 게시판 번호
+	public void update(int views, int id) {
+		jdbcTemplate.update("update set views = ? where = ?", views, id); //id는 게시판 번호
 	}
 }
