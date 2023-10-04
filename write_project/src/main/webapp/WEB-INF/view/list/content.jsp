@@ -15,7 +15,7 @@
 	</p>
 	<p>
 		<strong>작성 날짜</strong> | ${board.write_time} |
-		<strong>조회수</strong> | ${board.views} |
+		<strong>조회수</strong> | ${board.views + 1} |
 	</p>
 	<c:url value="/main" var="main" />
 	<button onclick="location.href='${main}'">메인으로 돌아가기</button>

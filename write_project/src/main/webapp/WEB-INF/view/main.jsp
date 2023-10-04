@@ -41,7 +41,7 @@
 					<td>${list.id}</td>
 					<td><a href="<c:url value='/main/${list.id}'/>">${list.subject}</a></td>
 					<td>${list.nickname}</td>
-					<td>${list.views + 1}</td>
+					<td>${list.views}</td>
 					<td>${list.write_time}</td>
 				</tr>
 			</c:forEach>
