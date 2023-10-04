@@ -29,4 +29,8 @@ public class BoardService {
 		Board con = boardDao.selectById(id);
 		return con;
 	}
+	
+	public void update(int views, int id) {
+		boardDao.update(views, id);
+	}
 }
