@@ -32,7 +32,7 @@ public class MainController {
 	public String content(@PathVariable("id") int id, Model model) {
 		Board board = boardService.content(id);
 		model.addAttribute("board", board);
-		return "main/content";
+		return "list/content";
 	}
 
 }
