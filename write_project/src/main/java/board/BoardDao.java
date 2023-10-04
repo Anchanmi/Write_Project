@@ -35,18 +35,18 @@ public class BoardDao {
 		return results.isEmpty() ? null : results.get(0);
 	}
 	
-	public List<Board> selectAll(){
-		List<Board> results = jdbcTemplate.query("select * from board", new RowMapper<Board>() {
+	public List<BoardList> selectAll(){
+		List<BoardList> results = jdbcTemplate.query("select * from board", new RowMapper<BoardList>() {
 			@Override
-			public Board mapRow(ResultSet rs, int rowNum) throws SQLException{
-				Board board = new Board(
+			public BoardList mapRow(ResultSet rs, int rowNum) throws SQLException{
+				BoardList boardList = new BoardList(
+						rs.getInt("id"),
 						rs.getString("subject"),
 						rs.getString("content"),
 						rs.getString("nickname"),
 						rs.getInt("views"),
 						rs.getTimestamp("write_time").toLocalDateTime());
-				board.setId(rs.getInt("id"));
-				return board;
+				return boardList;
 			}
 		});
 		return results;
