@@ -2,7 +2,7 @@ package board;
 
 import java.time.LocalDateTime;
 
-public class Board {
+public class Board { //게시판 정보 객체
 
 	private int id;
 	private String subject;

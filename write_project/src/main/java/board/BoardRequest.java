@@ -1,6 +1,6 @@
 package board;
 
-public class BoardRequest { //커맨드 객체
+public class BoardRequest { //글 등록 정보 객체
 
 	private String subject;
 	private String content;
