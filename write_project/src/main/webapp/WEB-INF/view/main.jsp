@@ -1,5 +1,6 @@
 <%@ page contentType="text/html; charset=utf-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="tf" tagdir="/WEB-INF/tags" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -42,7 +43,7 @@
 					<td><a href="<c:url value='/main/${list.id}'/>">${list.subject}</a></td>
 					<td>${list.nickname}</td>
 					<td>${list.views}</td>
-					<td>${list.write_time}</td>
+					<td><tf:formatDateTime value="${list.write_time}" pattern="yyyy-MM-dd HH:mm" /></td>
 				</tr>
 			</c:forEach>
 		</c:if>
