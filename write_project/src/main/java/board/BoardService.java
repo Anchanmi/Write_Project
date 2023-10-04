@@ -25,8 +25,8 @@ public class BoardService {
 		
 	}
 	
-	public List<Board> content(Board board){ //글 내용 보여주는 메소드
-		List<Board> list = boardDao.selectById(board.getId());
-		return list;
+	public Board content(Board board){ //글 내용 보여주는 메소드
+		Board con = boardDao.selectById(board.getId());
+		return con;
 	}
 }
