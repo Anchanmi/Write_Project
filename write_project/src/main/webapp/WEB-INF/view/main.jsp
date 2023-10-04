@@ -34,15 +34,15 @@
 		<th>작성자</th>
 		<th>조회수</th>
 		<th>작성 날짜</th>
-		
+
 		<c:if test="${!empty boardList}">
 			<c:forEach var="list" items="${boardList}">
 				<tr>
-					<td>${boardList.id}</td>
-					<td>${boardList.subject}</td>
-					<td>${boardList.nickname}</td>
-					<td>${boardList.views}</td>
-					<td>${boardList.write_time}</td>
+					<td>${list.id}</td>
+					<td>${list.subject}</td>
+					<td>${list.nickname}</td>
+					<td>${list.views}</td>
+					<td>${list.write_time}</td>
 				</tr>
 			</c:forEach>
 		</c:if>
