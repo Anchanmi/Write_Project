@@ -63,6 +63,6 @@ public class BoardDao {
 	}
 	
 	public void delete(int id) { //글 내용 삭제
-		jdbcTemplate.update("delete from board where = ?", id);
+		jdbcTemplate.update("delete from board where id = ?", id);
 	}
 }
