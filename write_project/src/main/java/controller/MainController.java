@@ -32,6 +32,7 @@ public class MainController {
 	@GetMapping("/main/{id}") //글 내용 보기
 	public String content(@PathVariable("id") int id, Model model) {
 		Board board = boardService.content(id);
+		board.setId(id);
 		int hit = board.getViews() + 1;
 		boardService.update(hit, id); //글을 읽을 때 마다 조회수가 올라감.
 		model.addAttribute("board", board);
