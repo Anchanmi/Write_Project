@@ -48,10 +48,4 @@ public class BoardController {
 		return "board/boardSuccess";
 		
 	}
-	
-	@PostMapping("/delete")
-	public String handleDelete(Board board) {
-		boardService.delete(board.getId());
-		return "redirect:/main";
-	}
 }
