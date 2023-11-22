@@ -19,8 +19,7 @@
 
 	<c:if test="${!empty authInfo}">
 		<c:url value="/logout" var="logout" />
-		<p>${authInfo.nickname}님		
-			<button>마이페이지</button>
+		<p>${authInfo.nickname}님
 			<button onclick="location.href='${logout}'">로그아웃</button>
 		</p>
 		<p>
