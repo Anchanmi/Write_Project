@@ -23,7 +23,7 @@
 	<button onclick="location.href='${main}'">메인으로 돌아가기</button>
 	<c:if test="${authInfo.nickname eq board.nickname}">
 		<p>
-			<c:url value="/delete" var="delete" />
+			<c:url value="/delete/${board.id}" var="delete" />
 			<button onclick="location.href='${delete}'">글삭제</button>
 		</p>
 	</c:if>

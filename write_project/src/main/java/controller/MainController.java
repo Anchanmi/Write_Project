@@ -38,9 +38,9 @@ public class MainController {
 		return "list/content";
 	}
 	
-	@RequestMapping("/delete")
-	public String handleDelete(BoardList boardList) {
-		boardService.delete(boardList.getId());
+	@RequestMapping("/delete/{id}")
+	public String handleDelete(@PathVariable("id") int id) {
+		boardService.delete(id);
 		return "redirect:/main";
 	}
 }
