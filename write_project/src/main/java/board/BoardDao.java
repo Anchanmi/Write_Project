@@ -61,4 +61,8 @@ public class BoardDao {
 	public void update(int views, int id) {
 		jdbcTemplate.update("update board set views = ? where id = ?", views, id); //id는 게시판 번호
 	}
+	
+	public void delete(int id) { //글 내용 삭제
+		jdbcTemplate.update("delete from board where = ?", id);
+	}
 }
