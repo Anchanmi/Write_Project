@@ -61,9 +61,4 @@ public class MemberDao {
 				member.getName(), member.getEmail(), Timestamp.valueOf(member.getRegister_day()));
 		
 	}
-	
-	public void update(Member member) {
-		
-	}
-	
 }
