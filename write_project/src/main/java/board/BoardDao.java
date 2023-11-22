@@ -64,5 +64,8 @@ public class BoardDao {
 	
 	public void delete(int id) { //글 내용 삭제
 		jdbcTemplate.update("delete from board where id = ?", id);
+		jdbcTemplate.execute("alter table board auto_increment = 1");
+		jdbcTemplate.execute("set @count = 0");
+		jdbcTemplate.update("update board set id = @count:=@count+1");
 	}
 }
