@@ -33,4 +33,8 @@ public class BoardService {
 	public void update(int views, int id) {
 		boardDao.update(views, id);
 	}
+	
+	public void delete(int id) {
+		boardDao.delete(id);
+	}
 }
