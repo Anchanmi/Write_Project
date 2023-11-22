@@ -4,6 +4,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ui.Model;
 
@@ -35,5 +36,11 @@ public class MainController {
 		boardService.update(hit, id); //글을 읽을 때 마다 조회수가 올라감.
 		model.addAttribute("board", board);
 		return "list/content";
+	}
+	
+	@PostMapping("/delete")
+	public String handleDelete(Board board) {
+		boardService.delete(board.getId());
+		return "redirect:/main";
 	}
 }
