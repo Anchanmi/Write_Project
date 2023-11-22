@@ -36,5 +36,4 @@ public class MainController {
 		model.addAttribute("board", board);
 		return "list/content";
 	}
-
 }
